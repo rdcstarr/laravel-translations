@@ -4,6 +4,7 @@ namespace Rdcstarr\Translations;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Rdcstarr\Translations\Commands\InstallTranslationsCommand;
 use Rdcstarr\Translations\Commands\TranslationsClearCacheCommand;
 use Rdcstarr\Translations\Commands\TranslationsDeleteCommand;
 use Rdcstarr\Translations\Commands\TranslationsGetCommand;
@@ -14,17 +15,11 @@ class TranslationsServiceProvider extends PackageServiceProvider
 {
 	public function configurePackage(Package $package): void
 	{
-		/*
-		 * This class is a Package Service Provider
-		 *
-		 * More info: https://github.com/spatie/laravel-package-tools
-		 */
 		$package
 			->name('laravel-translations')
-			->hasConfigFile()
-			->hasViews()
-			->hasMigration('create_laravel_translations_table')
+			->hasMigration('create_translations_table')
 			->hasCommands([
+				InstallTranslationsCommand::class,
 				TranslationsListCommand::class,
 				TranslationsGetCommand::class,
 				TranslationsSetCommand::class,
