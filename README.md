@@ -38,7 +38,7 @@ Alternatively, you can install manually:
 1. Publish the migrations:
 
 ```bash
-php artisan vendor:publish --provider="Rdcstarr\Translations\TranslationsServiceProvider" --tag="laravel-translations-migrations"
+php artisan vendor:publish --tag=translations-migrations
 ```
 
 2. Run the migrations:
