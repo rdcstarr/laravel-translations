@@ -14,7 +14,7 @@ if (!function_exists('translations'))
 	}
 }
 
-if (!function_exists('_t'))
+if (!function_exists('__t'))
 {
 	function _t(?string $key = null, mixed $default = false, ?string $languageCode = null): mixed
 	{
